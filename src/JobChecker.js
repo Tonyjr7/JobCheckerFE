@@ -21,7 +21,8 @@ const JobChecker = () => {
     setResults([]);
 
     try {
-      const res = await fetch(`https://jobschecker.onrender.com/check-jobs?profile=${role}&ai=${ai}`, {
+      console.log(process.env.REACT_APP_BACKEND_API);
+      const res = await fetch(process.env.REACT_APP_BACKEND_API + `?profile=${role}&ai=${ai}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ links: linkList }),
