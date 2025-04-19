@@ -21,7 +21,6 @@ const JobChecker = () => {
     setResults([]);
 
     try {
-      console.log(process.env.REACT_APP_BACKEND_API);
       const res = await fetch(process.env.REACT_APP_BACKEND_API + `?profile=${role}&ai=${ai}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
