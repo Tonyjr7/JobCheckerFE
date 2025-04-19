@@ -1,0 +1,99 @@
+/* App.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  h1, h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  textarea,
+  select,
+  button {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  textarea:focus,
+  select:focus,
+  button:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+  }
+  
+  button:hover:not(:disabled) {
+    background-color: #0056b3;
+  }
+  
+  .results {
+    margin-top: 30px;
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+  }
+  
+  th, td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  th {
+    background-color: #f0f0f0;
+  }
+  
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  .approved {
+    background-color: #e6ffed;
+  }
+  
+  .rejected {
+    background-color: #ffecec;
+  }
+  
