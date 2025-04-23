@@ -31,7 +31,7 @@ const JobChecker = () => {
       setResults(data.results || []);
     } catch (err) {
       console.error(err);
-      alert('There was an error checking the jobs. Please try again.');
+      alert('There was an error checking the jobs. Please try again soon');
     } finally {
       setLoading(false);
     }
