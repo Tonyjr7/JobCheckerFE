@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './JobChecker.css';
+import ErrorBox from './error';
 
 const JobChecker = () => {
   const [links, setLinks] = useState('');
@@ -7,9 +8,13 @@ const JobChecker = () => {
   const [ai, setAI] = useState('groq');
   const [loading, setLoading] = useState(false);
   const [results, setResults] = useState([]);
+  const [error, setError] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    setError('');
+
     const linkList = links
       .split('\n')
       .map(link => link.trim())
@@ -31,7 +36,7 @@ const JobChecker = () => {
       setResults(data.results || []);
     } catch (err) {
       console.error(err);
-      alert('There was an error checking the jobs. Please try again soon');
+      setError("There was an error checking the jobs. Please try again soon");
     } finally {
       setLoading(false);
     }
@@ -67,6 +72,7 @@ const JobChecker = () => {
           {loading ? 'Checking...' : 'Check Jobs'}
         </button>
       </form>
+      {error && <ErrorBox message={error} />}
 
       {results.length > 0 && (
         <div className="results">
